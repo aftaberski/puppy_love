@@ -35,15 +35,6 @@ describe "Article" do
           expect(article.user).to be_instance_of User
         end
       end
-
-      # describe "#user=" do
-      #   it "sets user_id" do
-      #     article = Article.new
-      #     new_user = User.first
-
-      #     expect{ article.owner = new_user }.to change{ article.user_id }.from(nil).to(new_user.id)
-      #   end
-      # end
     end
   end
 end
