@@ -1,6 +1,6 @@
 /* CSS declarations go here */
-body {font-family: Vollkorn; font-size: 160%; line-height: 160%; }
-h1, h2, h3, h4, h5, h6 {font-family: Georgia; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
+body {font-family: 'Josefin Sans', sans-serif; font-size: 140%; line-height: 140%; }
+h1, h2, h3, h4, h5, h6 {font-family: 'Josefin Sans', sans-serif; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: black; font-weight: 400;}
 h1 {font-size: 1.8em;}
 h2 {font-size: 1.6em;}
 h3 {font-size: 1.4em;}
@@ -36,32 +36,40 @@ a {
 }
 
 a:visited {
-    color: #AAA;
+    color: black;
 }
 
 a:hover {
     color: #000;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .logo {
   height: 2em;
 }
 
-code {
-    font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    padding: 0px 3px;
-    display: inline-block;
-    color: #52595d;
-    background-color: #E8F2F5;
-    font-size: 40%;
-    line-height: 1.4em;
-    margin-left: -1em;
-    overflow: auto;
+#login_form {
+    display:none;
+}
+
+#signup_form {
+    display:none;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.header-item {
+    height: 2em;
+    display: inline;
+    padding: 3px;
+}
+
+#header-title {
+    border: solid fuchsia 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: fuchsia;
 }
