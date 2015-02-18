@@ -20,3 +20,7 @@ end
 def app
   Sinatra::Application
 end
+
+def current_user
+  User.first
+end
