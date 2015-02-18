@@ -1,7 +1,47 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $('.welcome-login').on("click", function(event){
+    event.preventDefault();
+    $('#signup_form').hide();
+    $('#login_form').show();
+  });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('.login-ajax').on("submit", function(event){
+    event.preventDefault();
+    var $target = $(event.target)
+
+    $.ajax({
+      type: $target.attr("method"),
+      url: $target.attr("action"),
+      data: $target.serialize(),
+      success: function(response){
+        $('#content').empty();
+        $('#content').append(response);
+
+      },
+      error: function(response){
+        errorMod.show("Username or Password is Incorrect")
+      }
+    });
+  });
+
+   $('.welcome-signup').on("click", function(event){
+    event.preventDefault();
+    $('#login_form').hide();
+    $('#signup_form').show();
+  });
+
+   $('.signup-ajax').on("submit", function(event){
+    event.preventDefault();
+    var $target = $(event.target)
+
+    $.ajax({
+      type: $target.attr("method"),
+      url: $target.attr("action"),
+      data: $target.serialize(),
+      success: function(response){
+        $('#content').empty();
+        $('#content').append(response);
+      }
+    });
+  });
 });

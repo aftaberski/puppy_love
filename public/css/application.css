@@ -58,18 +58,22 @@ a:hover {
 
 header {
     text-align: center;
-    padding-bottom: 30px;
+    background-image: url("https://m1.behance.net/rendition/modules/101178947/disp/95814e2bea4b72dc219247c5f4dd224d.jpg");
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 
 .header-item {
     height: 2em;
     display: inline;
     padding: 3px;
+    font-weight: bold;
 }
 
 #header-title {
-    border: solid fuchsia 4px;
+    border: solid black 4px;
     margin-left: 10px;
     margin-right: 10px;
-    color: fuchsia;
+    color: black;
+    font-weight: bold;
 }
