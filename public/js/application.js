@@ -1,4 +1,11 @@
 $(document).ready(function() {
+
+  function shakeForm(form) {
+   var l = 20;
+   for( var i = 0; i < 10; i++ )
+     $( form ).animate( { 'margin-left': "+=" + ( l = -l ) + 'px' }, 50);
+  }
+
   $('.welcome-login').on("click", function(event){
     event.preventDefault();
     $('#signup_form').hide();
@@ -19,7 +26,8 @@ $(document).ready(function() {
 
       },
       error: function(response){
-        errorMod.show("Username or Password is Incorrect")
+        shakeForm("#login_form");
+        // errorMod.show("Username or Password is Incorrect")
       }
     });
   });
@@ -41,6 +49,10 @@ $(document).ready(function() {
       success: function(response){
         $('#content').empty();
         $('#content').append(response);
+      },
+      error: function(response){
+        shakeForm("#signup_form");
+        // errorMod.show("Username or Password is Incorrect")
       }
     });
   });
@@ -86,4 +98,5 @@ $(document).ready(function() {
       }
     });
   });
+
 });
