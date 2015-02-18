@@ -90,3 +90,11 @@ header {
 #new_article_form {
     display: none;
 }
+
+.heart-count {
+    color:#FF6666;
+}
+
+a.title, .title {
+    color: #FF6666;
+}
