@@ -27,7 +27,7 @@ $(document).ready(function() {
       },
       error: function(response){
         shakeForm("#login_form");
-        // errorMod.show("Username or Password is Incorrect")
+        errorMod.show("Username or Password is Incorrect");
       }
     });
   });

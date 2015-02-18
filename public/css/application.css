@@ -99,3 +99,9 @@ header {
 a.title, .title {
     color: #FF6666;
 }
+
+.error {
+    display: none;
+    background-color: red;
+    color: white;
+}
