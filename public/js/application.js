@@ -44,4 +44,10 @@ $(document).ready(function() {
       }
     });
   });
+
+   $('.add-new-puppy-btn').on("click", function(event){
+    event.preventDefault();
+    console.log("doing it!")
+    $('#new_article_form').toggle();
+  });
 });

@@ -1,10 +1,11 @@
 <div id="show-articles">
 
+
   <% if current_user %>
-    <button><a class="add-new-couple-btn" href="/articles/new">Add A New Photo</a></button>
+    <button><a class="add-new-puppy-btn" href="/articles/new">Add A New Photo</a></button>
+    <%= erb :'articles/new' %>
   <% end %>
 
-  <%= erb :'articles/new' %>
 
   <% @articles.each do |article| %>
     <h1><a href="/articles/<%= article.id %>" ><%= article.title %></a></h1>

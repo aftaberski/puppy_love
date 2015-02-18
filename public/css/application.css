@@ -86,3 +86,7 @@ header {
 .heart {
     width: 50px;
 }
+
+#new_article_form {
+    display: none;
+}
