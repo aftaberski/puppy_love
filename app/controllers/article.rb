@@ -2,7 +2,11 @@
 get '/articles/all' do
   if current_user
     @articles = Article.all
-    erb :'articles/show_all'
+    if request.xhr?
+      erb :'articles/show_all', layout: false
+    else
+      erb :'articles/show_all'
+    end
   end
 end
 

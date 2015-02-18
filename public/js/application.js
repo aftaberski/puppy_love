@@ -45,6 +45,20 @@ $(document).ready(function() {
     });
   });
 
+   $('a#show-articles-btn').on("click", function(event){
+    event.preventDefault();
+    var $target = $(event.currentTarget)
+    // debugger
+    $.ajax({
+      type: "GET",
+      url: $target.attr('href'),
+      success: function(response){
+        console.log("DONE!")
+        $('#content').empty();
+        $('#content').append(response);
+      }
+    });
+  });
    $('.add-new-puppy-btn').on("click", function(event){
     event.preventDefault();
     console.log("doing it!")
