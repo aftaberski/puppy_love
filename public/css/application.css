@@ -60,7 +60,7 @@ header {
     text-align: center;
     background-image: url("https://m1.behance.net/rendition/modules/101178947/disp/95814e2bea4b72dc219247c5f4dd224d.jpg");
     padding-top: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
     margin-bottom: 50px;
 }
 
@@ -77,6 +77,7 @@ header {
     margin-right: 10px;
     color: black;
     font-weight: bold;
+    font-size: 55px;
 }
 
 .article-photo {

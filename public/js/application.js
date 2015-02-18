@@ -64,4 +64,26 @@ $(document).ready(function() {
     console.log("doing it!")
     $('#new_article_form').toggle();
   });
+
+  $('a img.heart').on("click", function(event){
+    event.preventDefault();
+    var $target = $(event.target)
+    // debugger
+
+    $.ajax({
+      type: $target.data("method"),
+      url: $target.data("action"),
+      data: $target.data(),
+      success: function(response){
+        console.log("in success")
+        console.log(response)
+        console.log("target",$target)
+        console.log($('#' + $target.data('article_id')))
+        $('#' + $target.data('article_id')).empty();
+        $('#' + $target.data('article_id')).append(response);
+        // $('body').empty();
+        // $('body').append(response);
+      }
+    });
+  });
 });
