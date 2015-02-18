@@ -1,1 +1,17 @@
-Welcome to my site!
+<% if current_user %>
+  <a class="welcome-logout" href="/logout">Logout</a>
+  <a style="display:none" class="welcome-login" href="/login">Login</a>
+  <a style="display:none" class="welcome-signup" href="/signup">Signup</a>
+<% else %>
+  <a class="welcome-login" href="/login">Login</a>
+  <a class="welcome-signup" href="/signup">Signup</a>
+  <a style="display:none" class="welcome-logout" href="/logout">Logout</a>
+<% end %>
+<div class="auth-toggle">
+  <%= erb :'auth/login' %>
+  <%= erb :'auth/signup' %>
+</div>
+
+<% if current_user %>
+  <h1>Hi <%= current_user.name%>!</h1>
+<% end %>
