@@ -10,7 +10,7 @@
 
 
   <% @articles.each do |article| %>
-    <h1><a class="title" href="/articles/<%= article.id %>" ><%= article.title %></a></h1>
+    <h1><a class="single-article-ajax" href="/articles/<%= article.id %>" ><%= article.title %></a></h1>
     <h3>Posted by <%= article.user.name %></h3>
     <img class="article-photo" src="<%= article.photo %>"/>
     <p><%= article.content %></p>

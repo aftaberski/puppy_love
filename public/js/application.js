@@ -6,6 +6,25 @@ $(document).ready(function() {
      $( form ).animate( { 'margin-left': "+=" + ( l = -l ) + 'px' }, 50);
   }
 
+
+// UPDATE THIS WITH SINGLE ARTICLE INFO
+  $('#content').on("click", 'a.single-article-ajax', function(event){
+    event.preventDefault();
+    var $target = $(event.currentTarget)
+    // debugger
+    $.ajax({
+      type: "GET",
+      url: $target.attr('href'),
+      success: function(response){
+        $('#content').empty();
+        $('#content').append(response);
+      },
+      error: function(response){
+        console.log("ERRRRORRRRR!")
+      }
+    });
+  });
+
   $('.welcome-login').on("click", function(event){
     event.preventDefault();
     $('#signup_form').hide();
@@ -71,6 +90,7 @@ $(document).ready(function() {
       }
     });
   });
+
    $('.add-new-puppy-btn').on("click", function(event){
     event.preventDefault();
     console.log("doing it!")

@@ -102,6 +102,7 @@ a.title, .title {
 
 .error {
     display: none;
-    background-color: red;
+    background-color: #FF6666;
     color: white;
+    padding-left: 10px;
 }

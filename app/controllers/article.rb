@@ -35,8 +35,14 @@ end
 
 # SHOW SINGLE article
 get '/articles/:id' do
-  @article = Article.find(params[:id])
-  erb :'/articles/show_single'
+  if current_user
+    @article = Article.find(params[:id])
+    if request.xhr?
+      erb :'/articles/show_single', layout: false
+    else
+      erb :'/articles/show_single'
+    end
+  end
 end
 
 # UPDATE article
