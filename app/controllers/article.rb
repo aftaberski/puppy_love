@@ -1,3 +1,4 @@
+# SHOW ALL articles
 get '/articles/all' do
   if current_user
     @articles = Article.all
@@ -5,6 +6,8 @@ get '/articles/all' do
   end
 end
 
+
+# CREATE new article
 get '/articles/new' do
   if current_user
     erb :'articles/new'
@@ -19,9 +22,10 @@ post '/articles/new' do
   article = Article.create(params[:article])
 
   if article.save
-    @article = article
     @user = User.find(article.user_id).name
     redirect "/articles/#{article.id}"
+  else
+    redirect "/articles/all"
   end
 end
 
@@ -44,6 +48,7 @@ put '/articles/:id' do
   redirect "/articles/#{article.id}"
 end
 
+# DELETE article
 delete '/articles/:id' do
   article = Article.find(params[:id])
   article.destroy
