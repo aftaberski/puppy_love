@@ -1,0 +1,17 @@
+<div id="show-articles">
+
+  <% if current_user %>
+    <button><a class="add-new-couple-btn" href="/articles/new">Add A New Photo</a></button>
+  <% end %>
+
+  <%= erb :'articles/new' %>
+
+  <% @articles.each do |article| %>
+    <h1><a href="/articles/<%= article.id %>" ><%= article.title %></a></h1>
+    <h3>Posted by <%= article.user.name %></h3>
+    <img class="article-photo" src="<%= article.photo %>"/>
+    <p><%= article.content %></p>
+    <a href="#"><img data-action="/articles/<%= article.id %>/votes" data-method="post" data-user_id="<%= current_user.id %>" data-article_id="<%= article.id %>" class="heart" src="http://images.all-free-download.com/images/graphiclarge/heart_icon_deselected_144186.jpg"/></a>
+    <h3 class="heart-count" id="<%= article.id %>"><%= article.votes.count %></h3>
+  <% end %>
+</div>
