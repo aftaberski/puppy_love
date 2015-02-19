@@ -25,7 +25,6 @@ class ArticleSpec
     it 'should respond to /articles/:id' do
       get "/articles/#{article.id}"
       expect(last_response).to be_ok
-      # expect(last_response.body).to include 'update'
       expect(last_response.body).to include 'Missy'
     end
 
