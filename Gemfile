@@ -17,6 +17,7 @@ gem 'rake'
 gem 'puma'
 
 gem 'shotgun'
+gem 'rspec'
 
 group :test do
   gem 'shoulda-matchers'
